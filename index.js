@@ -35,7 +35,7 @@ app.post('/inventory', jsonParser, (req, res) => {
   let inventory = req.body;
 
   console.log(inventory)
-  res.send();
+  res.send('nice');
 
 })
 
