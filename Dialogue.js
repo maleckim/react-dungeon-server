@@ -7,8 +7,8 @@ module.exports = [
   {
     who: 'Stranger',
     Unique:'Dirty ol\' ciggy',
-    Choices:['Hey buddy','Lets fight', 'gimme a kiss'],
-    Responses:['Here ya go', 'prepare to die', 'not today weirdo']
+    Choices:['What the... you alright man?','pathetic weasel, you will perish now', 'gimme a kiss'],
+    Responses:['As good as I can be partner, here take this', 'prepare to die', 'not today weirdo']
   }
 
 

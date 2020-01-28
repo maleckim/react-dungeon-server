@@ -6,6 +6,7 @@ const jsonParser = bodyParser.json();
 const CharSelect = require('./CharChoice');
 const Dialogue = require('./Dialogue');
 const ItemDB = require('./ItemDB');
+const npcDB = require('./npcDB');
 
 const app = express();
 app.use(cors());
@@ -27,8 +28,15 @@ app.get('/response', (req, res) => {
 app.get('/info', (req, res) => {
   let { item } = req.query
   let info = ItemDB.filter(search => search.name === item)
-  console.log(info[0].description)
+  
   res.json(info[0].description);
+})
+
+app.get('/npcStat', (req, res) => {
+  let { who } = req.query;
+  let stats = npcDB.filter(a => a.name === who);
+  
+  res.json(stats[0])
 })
 
 app.post('/inventory', jsonParser, (req, res) => {
