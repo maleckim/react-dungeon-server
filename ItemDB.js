@@ -17,6 +17,14 @@ module.exports = [
     type:'C',
     damage:3,
     description:'Looks beat up'
+  },
+
+  {
+    name: 'Dirty ol\' ciggy',
+    type: 'NC/C',
+    damage: 'random',
+    description: 'Burns extremely slow, high chance of cancer'
+
   }
 
 ]

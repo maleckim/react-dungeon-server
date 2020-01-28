@@ -10,33 +10,35 @@ const ItemDB = require('./ItemDB');
 const app = express();
 app.use(cors());
 
+let inventory = [];
 
-app.get('/chars', ( req, res ) => {
+app.get('/chars', (req, res) => {
 
-  res.json(CharSelect) 
+  res.json(CharSelect)
 })
 
-app.get('/response', ( req, res ) => {
+app.get('/response', (req, res) => {
   let { who } = req.query
-  let speaker = Dialogue.filter(a => a.who === who )
-  
+  let speaker = Dialogue.filter(a => a.who === who)
+
   res.send(speaker[0])
 })
 
-app.get('/info', ( req, res ) => {
+app.get('/info', (req, res) => {
   let { item } = req.query
   let info = ItemDB.filter(search => search.name === item)
-  
-  res.json(info);
+  console.log(info[0].description)
+  res.json(info[0].description);
 })
 
 app.post('/inventory', jsonParser, (req, res) => {
 
-  let inventory = req.body;
+  let { data } = req.body;
+  if (!inventory.includes(data)) {
+    inventory.push(data);
+  }
 
-  console.log(inventory)
-  res.send('nice');
-
+  res.json(inventory);
 })
 
 app.listen(1234, () => {
