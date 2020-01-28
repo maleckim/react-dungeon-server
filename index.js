@@ -18,7 +18,8 @@ app.get('/response', ( req, res ) => {
   let { who } = req.query
   let speaker = Dialogue.filter(a => a.who === who )
   
-  res.send(speaker[0].Responses)
+  
+  res.send(speaker[0])
 
   
   

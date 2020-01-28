@@ -6,6 +6,7 @@ module.exports = [
 
   {
     who: 'Stranger',
+    Choices:['Hey buddy','Lets fight', 'gimme a kiss'],
     Responses:['Here ya go', 'prepare to die', 'not today weirdo']
   }
 
